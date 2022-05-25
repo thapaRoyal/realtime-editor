@@ -20,6 +20,8 @@ const EditorPage = () => {
             ))}
           </div>
         </div>
+        <button>Copy ROOM ID</button>
+        <button>Leave</button>
       </div>
       <div className="editorWrap">Editor goes here</div>
     </div>
