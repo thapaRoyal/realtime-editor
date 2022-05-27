@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import Client from '../components/Client';
 
 const EditorPage = () => {
-  const [clients, setClients] = useState([
-    { socketId: 1, username: 'royal' },
-    { socketId: 2, username: 'john doe' },
-  ]);
+  const [clients, setClients] = useState([]);
   return (
     <div className="mainWrap">
       <div className="aside">
