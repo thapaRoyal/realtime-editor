@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Client from '../components/Client';
+import Editor from '../components/Editor';
 
 const EditorPage = () => {
   const [clients, setClients] = useState([
@@ -9,7 +10,7 @@ const EditorPage = () => {
   return (
     <div className="mainWrap">
       <div className="aside">
-        <div className="asideInnner">
+        <div className="asideInner">
           <div className="logo">
             <img className="logoImage" src="/code-sync.png" alt="logo" />
           </div>
@@ -21,9 +22,11 @@ const EditorPage = () => {
           </div>
         </div>
         <button className="btn copyBtn">Copy ROOM ID</button>
-        <button className="btn leaverBtn">Leave</button>
+        <button className="btn leaveBtn">Leave</button>
       </div>
-      <div className="editorWrap">Editor goes here</div>
+      <div className="editorWrap">
+        <Editor />
+      </div>
     </div>
   );
 };
