@@ -55,6 +55,7 @@ footer a {
   border-radius: 5px;
   padding: 10px;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -133,4 +134,11 @@ footer a:hover {
 .leaveBtn {
   width: 100%;
   margin-top: 20px;
+}
+
+.CodeMirror {
+  /* min-height: 100vh; */
+  font-size: 20px;
+  line-height: 1.6;
+  padding-top: 20px;
 }
