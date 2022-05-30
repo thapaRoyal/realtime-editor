@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Client from '../components/Client';
 import Editor from '../components/Editor';
 
 const EditorPage = () => {
   const socketRef = useRef(null);
+  useEffect(() => {}, []);
   const [clients, setClients] = useState([
     { socketId: 1, username: 'royal' },
     { socketId: 2, username: 'john doe' },
