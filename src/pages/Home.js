@@ -1,35 +1,39 @@
 import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidV4 } from 'uuid';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const navigate = useNavigate();
+
   const [roomId, setRoomId] = useState('');
   const [username, setUsername] = useState('');
   const createNewRoom = (e) => {
     e.preventDefault();
-
-    const id = uuidv4();
+    const id = uuidV4();
     setRoomId(id);
     toast.success('Created a new room');
   };
 
   const joinRoom = () => {
     if (!roomId || !username) {
-      toast.error('Please enter a room id and username');
+      toast.error('ROOM ID & username is required');
       return;
     }
-    // redirect
-    navigate(`/editor/${roomId}`, { state: { username } });
+
+    // Redirect
+    navigate(`/editor/${roomId}`, {
+      state: {
+        username,
+      },
+    });
   };
 
   const handleInputEnter = (e) => {
-    if (e.key === 'Enter') {
+    if (e.code === 'Enter') {
       joinRoom();
     }
   };
-
   return (
     <div className="homePageWrapper">
       <div className="formWrapper">
@@ -43,7 +47,7 @@ const Home = () => {
           <input
             type="text"
             className="inputBox"
-            placeholder="Room ID"
+            placeholder="ROOM ID"
             onChange={(e) => setRoomId(e.target.value)}
             value={roomId}
             onKeyUp={handleInputEnter}
@@ -69,10 +73,8 @@ const Home = () => {
       </div>
       <footer>
         <h4>
-          Built with 💛️ by{' '}
-          <a href="https://github.com/thapaRoyal" target="_blank">
-            thapaRoyal
-          </a>
+          Built with 💛 &nbsp; by &nbsp;
+          <a href="https://github.com/thapaRoyal">thapaRoyal</a>
         </h4>
       </footer>
     </div>
